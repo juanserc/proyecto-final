@@ -1,0 +1,277 @@
+/* Estilos en General */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Modo Oscuro */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode header {
+    background: black;
+    color: white;
+}
+
+body.dark-mode .header-content,
+body.dark-mode nav ul li a {
+    color: white;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #ddb30c;
+}
+
+body.dark-mode nav ul li.menu-selected a {
+    color: #e08011; /* Texto naranja para el elemento en modo oscuro */
+}
+
+body.dark-mode .container-all {
+    background-color: #1c1c1c;
+}
+
+body.dark-mode section.container-info-cover {
+    background-color: #1c1c1c;
+}
+
+/* Modo Claro */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode header {
+    background: white;
+    color: black;
+}
+
+body.light-mode .header-content,
+body.light-mode nav ul li a {
+    color: black;
+}
+
+body.light-mode nav ul li a:hover {
+    color: #ddb30c;
+}
+
+body.light-mode nav ul li.menu-selected a {
+    color: #e08011; /* Texto naranja para el elemento en modo claro */
+}
+
+body.light-mode .container-all {
+    background-color: white;
+}
+
+body.light-mode section.container-info-cover {
+    background-color: white;
+}
+
+/* Efectos de hover en las opciones del menú */
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s, border-bottom 0.3s; /* conversion para el efecto hover */
+}
+
+nav ul li a:hover {
+    color: #ddb30c; /* Color del texto al hacer hover */
+    border-bottom: 2px solid #ddb30c; /* Línea inferior al hacer hover */
+}
+
+/* Estilos específicos del diseño */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: hsl(0, 6%, 91%);
+    box-shadow: 0 4px 25px -22px rgb(238, 74, 4);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .highlight {
+    color: rgb(158, 212, 20);
+}
+
+.nav {
+    height: 80px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li.menu-selected::before {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: hsl(32, 100%, 56%);
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(13, 241, 89); /* Color inicial */
+    transition: color 200ms, border-bottom 200ms;
+}
+
+nav ul li a:hover {
+    color: #ddb30c; /* Color del texto al hacer hover */
+    border-bottom: 2px solid #ddb30c; /* Línea inferior al hacer hover */
+}
+
+main.container-all {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: hsl(0, 100%, 99%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* el fondo de main cambiara según el modo */
+body.dark-mode main.container-all {
+    background-color: #1c1c1c;
+}
+
+body.light-mode main.container-all {
+    background-color: white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+}
+
+.container-all {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+
+section.container-info-cover {
+    height: 950px;
+    width: 100%;
+    background-image: url('../img/imagen1.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.container-info-cover {
+    max-width: 1200px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-cover h1 {
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container-info-cover p {
+    color: #fff;
+    font-size: 40px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    main.container-all {
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .container-info-cover {
+        padding: 20px;
+        height: auto;
+    }
+
+    .container-info-cover h1 {
+        font-size: 40px;
+    }
+
+    .container-info-cover p {
+        font-size: 20px;
+    }
+}
